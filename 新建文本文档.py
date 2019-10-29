@@ -6,7 +6,7 @@ def update(R, i, t):
             else:
                 R[i].append(0)
         elif R[i][t] == 1:
-            if R[8][t] == 0 and R[i+1][t] == 0:
+            if R[i+1][t] == 0:
                 R[i].append(0)
             else:
                 R[i].append(1)
@@ -18,7 +18,7 @@ def update(R, i, t):
                 R[i].append(0)
     
         elif R[i][t] == 1:
-            if R[i-1][t] == 0 and R[i+1][t] == 0:
+            if R[i+1][t] == 0:
                 R[i].append(0)
             else:
                 R[i].append(1)
@@ -30,7 +30,7 @@ def update(R, i, t):
                 R[i].append(0)
     
         elif R[i][t] == 1:
-            if R[i-1][t] == 0 and R[0][t] == 0:
+            if R[0][t] == 0:
                 R[i].append(0)
             else:
                 R[i].append(1)
@@ -44,9 +44,9 @@ R[5].append(1)
 R[6].append(0)
 R[7].append(0)
 R[8].append(1)
-for i in range(9):
-    for j in range(1):
-        update(R, i, j)
+for n in range(3):
+    for i in range(9):
+        update(R, i, n)
 for i in range(9):
     for j in range(len(R[i])):
         print(R[i][j], end='')
