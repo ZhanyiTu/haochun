@@ -1,4 +1,4 @@
-array R = [[]]  9
+array R = [[]] * 9
 R[0].append(1)
 R[1].append(0)
 R[2].append(0)
@@ -8,7 +8,12 @@ R[5].append(1)
 R[6].append(0)
 R[7].append(0)
 R[8].append(1)
-for 
+for i in range(9)
+    for j in range(len(R[i]))
+        update(R[i, j])
+for i in range(9)
+    for j in range(len(R[i]))
+        print(R[i, j])
 
 '''
     "1 & 0 & 1 & 0\\\\\n",
